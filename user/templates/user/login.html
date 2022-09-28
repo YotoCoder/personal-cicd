@@ -16,7 +16,7 @@
 </style>
 
 <div id="formu">
-  <form method="POST" class="w-[600px] h-[200px] bg-white shadow-xl rounded-lg flex items-center gap-10 flex-col justify-center bg-[#262626]" style="border: 1px solid rgb(228, 228, 228); margin: 4%; padding:10%; border-radius:1%;">
+  <form method="POST" class="w-[600px] h-[400px] bg-white shadow-xl rounded-lg flex items-center gap-10 flex-col justify-center bg-[#262626]" style="border: 1px solid rgb(228, 228, 228); margin: 4%; padding:10%; border-radius:1%;">
       {% csrf_token %}
       <fieldset class="form-group">
         {{ form|crispy}}
