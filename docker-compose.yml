@@ -1,0 +1,27 @@
+version: '3'
+
+# django app service
+
+services:
+  image: python:3.7
+  command: python manage.py runserver
+  restart: unless-stopped
+  volumes:
+    - .:/code
+  ports:
+    - "8000:8000"
+  depends_on:
+    - db
+  env_file:
+    - .env
+  expose:
+    - "8000"
+db:
+  image: postgres:11
+  volumes:
+    - db_data:/var/lib/postgresql/data/
+  env_file:
+    - .env
+
+volumes:
+  db_data:
