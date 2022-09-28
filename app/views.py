@@ -1,14 +1,17 @@
 import os
 from django.shortcuts import render
-from django.http import HttpResponseRedirect     
+from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
+@login_required
 def home(request):
     
     return render(request, 'index.html')
 
 def start(request):
+
 
     o = os.popen('cd .. && cd backend && sudo docker-compose up -d').read()
 
@@ -31,6 +34,13 @@ def restart(request):
     return HttpResponseRedirect('/')
 
 def pull(request):
+
+    o = os.popen('cd .. && cd backend && sudo docker-compose stop && sudo git pull && sudo docker-compose up -d').read()
+
+    print(o)
+    return HttpResponseRedirect('/')
+
+def update(request):
 
     o = os.popen('cd .. && cd backend && sudo docker-compose stop && sudo git pull && sudo docker-compose up -d').read()
 
