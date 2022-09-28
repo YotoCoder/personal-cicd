@@ -1,0 +1,20 @@
+{% extends "templates/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="content-section col-md-8 col-md-offset-2">
+  <form method="POST" style="border: 1px solid black; margin: 4%; padding:10%; border-radius:1%;">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      {{ form|crispy}}
+    </fieldset>
+    <center>
+      <button style="border: solid 3px #0076c9;" class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500  text-white hover:bg-[#0076c9] "  type="submit"> &nbsp; Register</button>
+    <a href="/"><input type="button" class="btn btn-outline-primary" value="Cancel"></a>
+    </center>
+    <br />
+    <sub><a href="{% url "login" %}" style="text-decoration: none; color: blue; padding:3%; cursor:pointer;">Already have an account ?</a></sub>
+  </form>
+</div>
+{% endblock content %}
