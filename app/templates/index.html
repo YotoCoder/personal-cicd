@@ -17,21 +17,16 @@
 
 </style>
 
-    {% if user.is_authenticated %}
-        <div id="logout" class="">
-            <a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span> <button style="border: solid 3px #4600c9;" class="top text-bold py-3 px-8 rounded-xl shadow-lg transition-all duration-500  text-white hover:bg-[#820080]"  type="submit"> &nbsp; CERRAR SESIÓN</button></a>
-        </div>
-    {% endif %}
 
 
     <div id="panel">
         <div class="w-[400px] h-[600px] bg-white shadow-xl rounded-lg flex items-center gap-10 flex-col justify-center bg-[#262626]">
             <h1 class="text-white text-[34px]">PANEL ADMIN</h1>
             <div class="content-buttons flex flex-col w-[200px] gap-6 ">
-                <button style="border: solid 3px #0076c9;" class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500  text-white hover:bg-[#0076c9] " onclick="location.href='/start'">INICIAR</button>
-                <button style="border: solid 3px #8a000b;" class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500  text-white hover:bg-[#8a000b]" onclick="location.href='/stop'">DETENER</button>
-                <button style="border: solid 3px #c96100;" class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500  text-white hover:bg-[#c96100]" onclick="location.href='/restart'">REINICIAR</button>
-                <button style="border: solid 3px #820080;"  class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500 text-white hover:bg-[#820080]" onclick="location.href='/pull'">GIT PULL</button>
+                <a href="/start" style="border: solid 3px #0076c9;" class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500  text-white hover:bg-[#0076c9] " >INICIAR</a>
+                <a href="/stop" style="border: solid 3px #8a000b;" class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500  text-white hover:bg-[#8a000b]" >DETENER</a>
+                <a href="/restart" style="border: solid 3px #c96100;" class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500  text-white hover:bg-[#c96100]" >REINICIAR</a>
+                <a href="/pull" style="border: solid 3px #820080;"  class="button text-bold px-8 py-5 rounded-xl shadow-lg transition-all duration-500 text-white hover:bg-[#820080]">GIT PULL</a>
             </div>
         </div>
     </div>
